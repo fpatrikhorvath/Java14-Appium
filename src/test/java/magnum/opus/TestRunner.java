@@ -3,7 +3,9 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.runner.RunWith;
-
+/**
+ * The TestRunner class is responsible for running Cucumber tests for the Magnum Opus application.
+ */
 @Slf4j
 @RunWith(Cucumber.class)
 @CucumberOptions(

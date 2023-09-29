@@ -20,12 +20,11 @@ public class AppiumDriverExtension {
      */
     public AppiumDriverExtension() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Utils.PLATFORM_NAME);
-        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, Utils.AUTOMATION_NAME);
-        desiredCapabilities.setCapability(MobileCapabilityType.UDID, Utils.UDID);
-        desiredCapabilities.setCapability("appPackage", Utils.APP_PACKAGE);
-        desiredCapabilities.setCapability("appActivity", Utils.APP_ACTIVITY);
-
+        desiredCapabilities.setCapability(MobileCapabilityTypeExtended.PLATFORM_NAME, Utils.PLATFORM_NAME);
+        desiredCapabilities.setCapability(MobileCapabilityTypeExtended.AUTOMATION_NAME, Utils.AUTOMATION_NAME);
+        desiredCapabilities.setCapability(MobileCapabilityTypeExtended.UDID, Utils.UDID);
+        desiredCapabilities.setCapability(MobileCapabilityTypeExtended.APP_PACKAGE, Utils.APP_PACKAGE);
+        desiredCapabilities.setCapability(MobileCapabilityTypeExtended.APP_ACTIVITY, Utils.APP_ACTIVITY);
         try {
             URL appiumServer = new URL(Utils.APPIUM_SERVER);
             driver = new AndroidDriver(appiumServer, desiredCapabilities);
