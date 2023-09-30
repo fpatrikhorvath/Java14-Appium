@@ -1,6 +1,7 @@
 <h1>Appium Tutorial Project</h1>
 
 It's not possible to test IOS/IPhone applications on windows.
+So it's only for Android application testing.
 
 This projected is based on this video series: 
 https://www.youtube.com/watch?v=bRuzJi1ekXE&list=PLBNb67lT6eELiDgH97xpdJeKM624Zm7li
