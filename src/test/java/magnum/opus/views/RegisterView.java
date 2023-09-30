@@ -1,41 +1,28 @@
 package magnum.opus.views;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-/**
- * The LoginView class represents the login view in a mobile application.
- * It extends the BaseView class and provides methods to interact with elements on the login view.
- */
-public class LoginView extends BaseView {
-    //Mobile element representations
+
+public class RegisterView extends BaseView{
     @AndroidFindBy(id = "android:id/message")
     MobileElement loggedInMessagebox;
     @AndroidFindBy(accessibility = "input-email")
     MobileElement emailInputField;
     @AndroidFindBy(accessibility = "input-password")
     MobileElement passwordInputField;
-    @AndroidFindBy(accessibility = "button-LOGIN")
-    MobileElement loginButton;
-    @AndroidFindBy(accessibility = "button-sign-up-container")
+    @AndroidFindBy(accessibility = "input-repeat-password")
+    MobileElement passwordRepeatInputField;
+    @AndroidFindBy(accessibility = "button-SIGN UP")
     MobileElement signUpButton;
     /**
-     * Constructor for initializing a LoginView object.
+     * Constructor for initializing a BaseView object.
      *
      * @param driver The AndroidDriver instance used for interaction with the mobile app.
      */
-    public LoginView(AndroidDriver driver) {
+    public RegisterView(AndroidDriver driver) {
         super(driver);
     }
-
-    /**
-     * Checks if the login view is initialized and visible.
-     *
-     * @return true if the view is initialized, otherwise false.
-     */
-    public boolean isInitialized() {
-        return isElementVisible(emailInputField);
-    }
-
     /**
      * Enters text into the specified input field.
      *
@@ -46,6 +33,7 @@ public class LoginView extends BaseView {
         switch (inputField) {
             case "email" -> enterTextToElement(emailInputField, value);
             case "password" -> enterTextToElement(passwordInputField, value);
+            case "password repeat" -> enterTextToElement(passwordRepeatInputField, value);
             default -> throw new IllegalArgumentException(inputField + " is not a valid input field!");
         }
     }
@@ -57,16 +45,14 @@ public class LoginView extends BaseView {
      */
     public void clickOnButton(String buttonName) {
         switch (buttonName) {
-            case "login" -> clickOnElement(loginButton);
-            case "to sign up" -> clickOnElement(signUpButton);
+            case "sign up" -> clickOnElement(signUpButton);
             default -> throw new IllegalArgumentException(buttonName + " is not a valid button!");
         }
     }
-
     /**
-     * Checks if the specified element is visible on the login view.
+     * Checks if the specified element is visible on the register view.
      *
-     * @param elementName The name of the element ("logged in box").
+     * @param elementName The name of the element.
      * @return true if the element is visible, otherwise false.
      */
     public boolean isElementAppeared(String elementName) {

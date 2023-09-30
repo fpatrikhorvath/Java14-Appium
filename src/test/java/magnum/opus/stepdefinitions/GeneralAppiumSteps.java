@@ -4,8 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
-import static magnum.opus.stepdefinitions.Hooks.loginView;
-import static magnum.opus.stepdefinitions.Hooks.navBar;
+import static magnum.opus.stepdefinitions.Hooks.*;
+
 /**
  * This class defines Cucumber step definitions for general Appium actions.
  * It includes steps related to navigating views, entering text, and pressing buttons.
@@ -37,6 +37,7 @@ public class GeneralAppiumSteps {
     public void theUserTypesInTheAsOnThePage(String value, String inputField, String viewName) {
         switch (viewName) {
             case "login" -> loginView.enterTextToInput(inputField, value);
+            case "register" -> registerView.enterTextToInput(inputField, value);
             default -> throw new IllegalArgumentException(viewName + " is not a valid view!");
         }
     }
@@ -51,6 +52,7 @@ public class GeneralAppiumSteps {
     public void theUserPressesTheButtonOnTheView(String buttonName, String viewName) {
         switch (viewName) {
             case "login" -> loginView.clickOnButton(buttonName);
+            case "register" -> registerView.clickOnButton(buttonName);
             default -> throw new IllegalArgumentException(viewName + " is not a valid view!");
         }
     }

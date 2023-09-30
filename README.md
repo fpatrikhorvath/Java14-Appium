@@ -1,6 +1,6 @@
 <h1>Appium Tutorial Project</h1>
 
-Please note that this project is still under development!
+It's not possible to test IOS/IPhone applications on windows.
 
 This projected is based on this video series: 
 https://www.youtube.com/watch?v=bRuzJi1ekXE&list=PLBNb67lT6eELiDgH97xpdJeKM624Zm7li

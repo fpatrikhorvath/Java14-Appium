@@ -6,6 +6,7 @@ import io.cucumber.java.Scenario;
 import magnum.opus.core.AppiumDriverExtension;
 import magnum.opus.views.LoginView;
 import magnum.opus.views.NavigatonBarView;
+import magnum.opus.views.RegisterView;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 /**
@@ -17,6 +18,7 @@ public class Hooks {
     static AndroidDriver androidDriver;
     static NavigatonBarView navBar;
     static LoginView loginView;
+    static RegisterView registerView;
 
     /**
      * Sets up the Android driver and initializes view objects.
@@ -26,6 +28,7 @@ public class Hooks {
         androidDriver = new AppiumDriverExtension().getInstance();
         navBar = new NavigatonBarView(androidDriver);
         loginView = new LoginView(androidDriver);
+        registerView = new RegisterView(androidDriver);
     }
 
     /**
